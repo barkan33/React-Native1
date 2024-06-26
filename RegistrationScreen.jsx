@@ -5,11 +5,11 @@ import LinearGradient from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { MY_URL, UserContext } from './ContextApp';
 
-const RegistrationScreen = () => {
+const RegistrationScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [msg, setMsg] = useState('');
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const { setConnectedUser } = useContext(UserContext);
 
   const handleSubmit = () => {
@@ -34,7 +34,7 @@ const RegistrationScreen = () => {
     }).then((data) => {
       setConnectedUser({ username: username, id: data.id });
       console.log(data);
-      navigation.navigate('Home');
+      navigation.navigate('Home')
     }).catch((error) => {
       setMsg(error.message === "User Alrady Exists" ? "User Alrady Exists" : '');
       console.error('Registration Error:', error);

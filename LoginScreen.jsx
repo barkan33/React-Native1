@@ -8,13 +8,13 @@ import LinearGradient from 'expo-linear-gradient';
 import { MY_URL, UserContext } from './ContextApp';
 
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
     const [email, setEmail] = useState('misha5');//TEST
     const [password, setPassword] = useState('misha5');
     const [msg, setMsg] = useState('');
     const { connectedUser, setConnectedUser } = useContext(UserContext);
 
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
 
     const handleSubmit = () => {
         fetch(MY_URL + "login", {
