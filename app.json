@@ -22,6 +22,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },"extra": {
+      "eas": {
+        "projectId": "025342be-1ac7-4879-b66f-f6557fb44997"
+      }
+    },
+    "owner": "barkan33"
   }
 }
